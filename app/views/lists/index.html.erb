@@ -1,0 +1,22 @@
+<section class="todoapp">
+	<header class="header">
+		<h1>todo lists</h1>
+          <%= form_for(@list) do |f| %>
+            <%= f.text_field :name, class: "new-todo", placeholder: "make a new list" %>
+            <%= f.submit style: "visibility: hidden;", data: "disable_with: false"%>
+          <% end %>
+	</header>
+	<section class="main">
+		<ul class="todo-list">
+        <% @lists.each do |list| %>
+          <li>
+            <div class="view">
+              <label><a href="#"><%= link_to list.name, list_path(list) %></a></label>
+            </div>
+          </li>
+        <% end %>
+        </ul>
+	</section>
+	<footer class="footer">
+	</footer>
+</section>
