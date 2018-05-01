@@ -1,15 +1,20 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= @list.name %></h1>
-		<input class="new-todo" placeholder="add a todo item" autofocus="">
+		<%= form_for([@list, @item]) do |f| %>
+            <%= f.text_field :description, class: "new-todo", placeholder: (@item.errors.full_messages_for(:description).first || "add a new item") %>
+            <%= f.submit style: "visibility: hidden;", data: "disable_with: false"%>
+          <% end %>
 	</header>
 	<section class="main">
 		<ul class="todo-list">
+        <% @list.items.each do |item| %>
           <li>
             <div class="view">
-              <label>milk</label>
+              <label><%= item.description %></label>
             </div>
           </li>
+        <%end%>
         </ul>
 	</section>
 	<footer class="footer">

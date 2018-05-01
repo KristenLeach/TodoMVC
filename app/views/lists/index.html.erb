@@ -2,7 +2,7 @@
 	<header class="header">
 		<h1>todo lists</h1>
           <%= form_for(@list) do |f| %>
-            <%= f.text_field :name, class: "new-todo", placeholder: "make a new list" %>
+            <%= f.text_field :name, class: "new-todo", placeholder: (@list.errors.full_messages_for(:name).first || "make a new list") %>
             <%= f.submit style: "visibility: hidden;", data: "disable_with: false"%>
           <% end %>
 	</header>
