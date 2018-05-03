@@ -24,13 +24,20 @@ Pre-planning
     - marking items as complete/incomplete
 
 6. Deleting items from a list
-
+[X]
 
     lists
         name
 
     item
         id  description list_id
+
+        ** refactor button_to?
+
+
+7. User sign up and login
+
+8. Users have lists and can only see thier lists.
 
 
 -- when implementing a change, first ask: 
@@ -42,17 +49,4 @@ Pre-planning
     Models: 
     lists -has many items
     items -belongs to a list
-
-add this to the view 
-
-<input class="toggle" type="checkbox">
-
-need js function to submit form when you click the checkbox 
-
-$(function(){
-    $("input.toggle").on("change", function(){
-        $(this).parents("form").trigger("submit")
-    })
-});
-
 
