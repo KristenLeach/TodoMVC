@@ -43,5 +43,16 @@ Pre-planning
     lists -has many items
     items -belongs to a list
 
+add this to the view 
+
+<input class="toggle" type="checkbox">
+
+need js function to submit form when you click the checkbox 
+
+$(function(){
+    $("input.toggle").on("change", function(){
+        $(this).parents("form").trigger("submit")
+    })
+});
 
 
